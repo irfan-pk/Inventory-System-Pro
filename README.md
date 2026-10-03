@@ -5,4 +5,6 @@ I have used the PDFSharp library to generate invoices directly into a PDF and sa
 I have designed some reports, like sales invoices, purchase invoices, and stock ledger, to provide the pattern/concept.
 You can copy the procedure and methods to build the remaining/required reports.
 I have also used hashing to provide password security and designed roles to perform specific tasks for users. You must create a separate role for every user for better security and specific tasks.
-If you have any query/suggestion/bugs plz feel free to email me for enhanced the project features/design/reports, etc. I will highly appreciate your feedback.
+If you have any query/suggestion/bugs plz feel free to email me for enhanced the project features/design/reports, etc. I would highly appreciate your feedback.
+You can also manage multiple warehouses and track the warehouse inventory in a very easy way.
+Provide the facility to manage stock, customer, and supplier ledgers.
