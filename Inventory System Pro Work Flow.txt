@@ -1,0 +1,114 @@
+INVENTORY SYSTEM PRO
+
+MASTER DATA
+│
+├── Customer
+│   ├── Customers
+│   └── CustomerLedger
+│
+├── Product
+│   ├── Products
+│   ├── Categories
+│   └── Units
+│
+└── Supplier
+    └── Suppliers
+
+
+PURCHASE
+│
+├── Purchase Order
+│   ├── PurchaseOrders
+│   └── PurchaseOrderDetails
+│
+├── Purchase Receipt
+│   ├── Purchases
+│   └── PurchaseDetails
+│
+└── Purchase Return
+    ├── PurchaseReturns
+    └── PurchaseReturnDetails
+
+
+SALES
+│
+├── Sale
+│   ├── Sales
+│   └── SaleDetails
+│
+└── Sale Return
+    ├── SaleReturns
+    └── SaleReturnDetails
+
+
+LEDGERS
+│
+├── StockLedger
+├── SupplierLedger
+└── CustomerLedger
+
+
+CASH
+│
+└── CashTransactions
+
+
+                    INVENTORY SYSTEM PRO
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+       MASTER           PURCHASE           SALES
+          │                │                │
+          │                │                ├── Sale
+          │                │                │
+          │                │                ├── Sale Return
+          │                │                │
+          │                │                └── Sale Order ← MISSING
+          │                │
+          │                ├── Purchase Order
+          │                ├── Purchase Receipt
+          │                └── Purchase Return
+          │
+          ├── Customer
+          ├── Product
+          └── Supplier ← Master form not visible
+                           
+                    ↓
+                 LEDGERS
+                    │
+          ┌─────────┼─────────┐
+          ↓         ↓         ↓
+       Stock     Supplier   Customer
+       
+                    ↓
+                  CASH
+                    │
+             CashTransactions
+			 
+			 
+			 
+             FrmSaleOrder
+                  │
+                  ↓
+        ┌───────────────────┐
+        │    SaleOrders      │
+        │    SaleOrderDetails│
+        └─────────┬─────────┘
+                  │
+                  ↓
+              OPEN SO
+                  │
+                  ↓
+            Approve / Process
+                  │
+                  ↓
+              FrmSale
+                  │
+                  ↓
+             Sales + SaleDetails
+                  │
+                  ↓
+       Stock OUT + CustomerLedger
+                  │
+                  ↓
+          CashTransactions
